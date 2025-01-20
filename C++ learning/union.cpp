@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-union Payment{//union is a user defined data type which can store 
+union payment{//union is a user defined data type which can store 
 //different data types in the same memory location
     string cash;
     string card;
@@ -9,4 +9,6 @@ union Payment{//union is a user defined data type which can store
 };
 int main(){
     
+  
+    return 0;
 }
