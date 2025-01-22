@@ -74,5 +74,8 @@
     },
     "search.exclude": {
         "**/*.exe": true
-    }
+    },
+    "code-runner.executorMap": {
+        "cpp": "cd sdir && g++ -std=c++17 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    },
 }
