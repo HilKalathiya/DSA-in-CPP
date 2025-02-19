@@ -4,10 +4,28 @@
         {
             "label": "Compile and run",
             "type": "shell",
-            "command": "cmd.exe",
+            "command": "",
             "args": [
-                "/c",
-                "g++ \"${file}\" -o \"${workspaceFolder}\\jspwTest\" && \"${workspaceFolder}\\jspwTest\" < \"${workspaceFolder}\\input.txt\" > \"${workspaceFolder}\\output.txt\" && del \"${workspaceFolder}\\jspwTest.exe\""
+                "copy",
+                "\"${file}\"",
+                "${workspaceFolder}\\.vscode\\jspwTest.cpp",
+                "&&",
+                "g++",
+                ".vscode\\jspwTest.cpp",
+                "-o",
+                ".vscode\\jspwTest",
+                "&&",
+                ".vscode\\jspwTest",
+                "<",
+                ".vscode\\Input.txt",
+                ">",
+                ".vscode\\Output.txt",
+                "&&",
+                "del",
+                ".vscode\\jspwTest.exe",
+                "&&",
+                "del",
+                ".vscode\\jspwTest.cpp"
             ],
             "presentation": {
                 "reveal": "never"
