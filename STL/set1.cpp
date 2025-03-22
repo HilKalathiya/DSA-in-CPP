@@ -25,6 +25,7 @@ int main(){
         s.erase(it);
     }
     print(s);
-
+    auto it1 = s.lower_bound('v');
+    cout<<*it1<<endl;
     return 0;
 }
