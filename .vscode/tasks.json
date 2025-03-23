@@ -2,33 +2,17 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Compile and run",
+            "label": "Compile and Run C++",
             "type": "shell",
-            "command": "",
+            "command": "cmd",
             "args": [
-                "copy",
-                "\"${file}\"",
-                "${workspaceFolder}\\.vscode\\jspwTest.cpp",
-                "&&",
-                "g++",
-                ".vscode\\jspwTest.cpp",
-                "-o",
-                ".vscode\\jspwTest",
-                "&&",
-                ".vscode\\jspwTest",
-                "<",
-                ".vscode\\Input.txt",
-                ">",
-                ".vscode\\Output.txt",
-                "&&",
-                "del",
-                ".vscode\\jspwTest.exe",
-                "&&",
-                "del",
-                ".vscode\\jspwTest.cpp"
+                "/c",
+                "g++ \"${relativeFile}\" -o \"${fileDirname}/a.exe\" && ( \"${fileDirname}/a.exe\" < \"${workspaceFolder}/.vscode/Input.txt\" > \"${workspaceFolder}/.vscode/Output.txt\" ) && del \"${fileDirname}/a.exe\""
             ],
             "presentation": {
-                "reveal": "never"
+                "reveal": "never",
+                "focus": false,
+                "panel": "shared"
             },
             "group": {
                 "kind": "build",
@@ -38,10 +22,10 @@
                 "owner": "cpp",
                 "fileLocation": [
                     "relative",
-                    "${workspaceRoot}"
+                    "${workspaceFolder}"
                 ],
                 "pattern": {
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "regexp": "^(.):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
                     "file": 1,
                     "line": 2,
                     "column": 3,
